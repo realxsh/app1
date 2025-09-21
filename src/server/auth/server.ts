@@ -28,18 +28,18 @@ export const auth = betterAuth({
             config: [
                 {
                     providerId: 'authx',
-                    clientId: 'client_o6gd5avj04gtiiwbg7w8m',
-                    clientSecret: 'secret_ba8t5vny2mv8jnxurdlh1b',
+                    clientId: 'client_ew6r6t3mntqnz9mm22gdi',
+                    clientSecret: 'secret_yr0wi4c72akyctn2860s8',
                     scopes: ['openid', 'profile', 'email'],
                     discoveryUrl:
-                        'http://localhost:3000/api/auth/.well-known/openid-configuration',
+                        'http://authx.ash404.me/api/auth/.well-known/openid-configuration',
                     redirectURI:
-                        'http://localhost:3002/api/auth/oauth2/callback/authx',
+                        'http://app1.ash404.me/api/auth/oauth2/callback/authx',
                 },
             ],
         }),
     ],
-    trustedOrigins: ['http://localhost:3002', 'http://localhost:3001'],
+    trustedOrigins: ['http://localhost:3002', 'http://localhost:3001', 'http://app1.ash404.me', 'http://authx.ash404.me'],
     emailVerification: {
         sendVerificationEmail: async ({ user, url }) => {
             const { subject, html } = createVerificationEmail(url);
